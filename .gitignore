@@ -1,23 +1,11 @@
-.DS_Store
-node_modules
-/dist
+import { createApp } from "vue";
+import store from "./store/store"
+import router from "./router/routing";
+import App from "./App";
+import "./css/style.css";
+import "./css/responsive.css";
 
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+const app = createApp(App);
+app.use(store)
+app.use(router);
+app.mount("#app");
